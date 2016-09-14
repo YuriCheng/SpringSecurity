@@ -29,10 +29,13 @@ import org.springframework.web.servlet.ModelAndView;
  * request attribute that can be used during the course of request processing.
  * Supports obtaining a reference to the current member Account from @Controllers and views.
  * @author Keith Donald
+ * Spring MVC 拦截器 通过识别当前request属性（可以被使用在整个请求过程中）拦截当前登录账户
+ * 支持从@Controller和views获取当前账户的引用
  */
 public class AccountExposingHandlerInterceptor implements HandlerInterceptor {
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		//认证
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();		
 		if (auth != null && auth.getPrincipal() instanceof Account) {
 			request.setAttribute("account", auth.getPrincipal());

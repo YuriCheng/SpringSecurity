@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 
-
-<!--  -->
+<!-- apache tiles 布局模版 -->
+<!--page,header,footer 布局界面-->
 <tiles-definitions>
 	<definition name="page" templateExpression="/WEB-INF/layouts/${currentDevice.mobile ? 'mobile/' : 'standard/'}page.jsp">
 		<put-attribute name="header" expression="/WEB-INF/layouts/${currentDevice.mobile ? 'mobile/' : 'standard/'}header.jsp" />
